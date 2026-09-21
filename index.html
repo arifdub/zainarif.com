@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Caveat:wght@600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=4">
+<link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
 
@@ -69,8 +69,10 @@
 
   <!-- HERO -->
   <section id="home" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-text reveal">
+    <div class="hero-banner reveal">
+      <img src="assets/images/hero-banner.jpg" alt="Snake in its natural habitat surrounded by DNA strands, molecules and lab glassware — biochemistry meets herpetology" loading="eager">
+      <div class="hero-banner-overlay"></div>
+      <div class="hero-banner-inner container">
         <p class="eyebrow">Student · Researcher · Explorer</p>
         <h1>Zain <span class="accent">Arif</span></h1>
         <p class="hero-desc">
@@ -80,39 +82,11 @@
         <span class="hero-badge"><span class="dot"></span> Transition Year · Rath Dara Community College</span>
         <div class="hero-cta">
           <a href="#contact" class="btn btn-primary">Get in Touch</a>
-          <a href="assets/Zain_Arif_CV.pdf" class="btn-link" download>
+          <a href="assets/Zain_Arif_CV.pdf" class="btn-link btn-link-light" download>
             <svg width="16" height="16"><use href="#i-download"/></svg> Download CV
           </a>
         </div>
         <p class="hero-quote">&ldquo;Small steps in science today, bigger discoveries tomorrow.&rdquo;</p>
-      </div>
-
-      <div class="hero-visual reveal" style="--delay:.15s">
-        <div class="hero-scribble">Nature<br>Science<br>Curiosity</div>
-        <svg viewBox="0 0 420 420" role="img" aria-label="Illustration of a coiled snake">
-          <defs>
-            <linearGradient id="snakeGrad" x1="0" y1="1" x2="1" y2="0">
-              <stop offset="0%" stop-color="#0f6b3c"/>
-              <stop offset="55%" stop-color="#1fae5c"/>
-              <stop offset="100%" stop-color="#5be08a"/>
-            </linearGradient>
-            <radialGradient id="blobGrad" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#16a34a" stop-opacity=".16"/>
-              <stop offset="100%" stop-color="#16a34a" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-          <circle cx="210" cy="210" r="200" fill="url(#blobGrad)"/>
-          <path d="M15 20c8 22-2 30-10 40" transform="translate(60,330)" stroke="#16a34a" stroke-opacity=".35" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <path d="M0 0c10 18-6 24-2 40" transform="translate(330,60)" stroke="#16a34a" stroke-opacity=".35" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <path id="snakeBody" d="M75,360 C40,300 55,255 100,235 C160,210 150,150 105,120 C70,97 78,55 120,40"
-                fill="none" stroke="url(#snakeGrad)" stroke-width="46" stroke-linecap="round"/>
-          <path d="M75,360 C40,300 55,255 100,235 C160,210 150,150 105,120 C70,97 78,55 120,40"
-                fill="none" stroke="#0a4a29" stroke-opacity=".45" stroke-width="4" stroke-dasharray="1 15" stroke-linecap="round"/>
-          <path d="M96,52 C104,34 132,26 150,38 C166,49 166,72 150,86 C138,96 120,94 108,84 Z" fill="url(#snakeGrad)"/>
-          <circle cx="132" cy="52" r="5.5" fill="#0b1a13"/>
-          <circle cx="134" cy="50" r="1.6" fill="#fff"/>
-          <path d="M150,40 L164,30 M150,40 L162,44" stroke="#7a1f2b" stroke-width="2" stroke-linecap="round"/>
-        </svg>
       </div>
     </div>
 
@@ -190,21 +164,7 @@
       <div class="project-grid">
         <div class="project-card reveal">
           <div class="project-media">
-            <svg viewBox="0 0 300 200" role="img" aria-label="Snake illustration">
-              <defs>
-                <linearGradient id="cardSnake" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#5be08a"/>
-                  <stop offset="100%" stop-color="#0f6b3c"/>
-                </linearGradient>
-              </defs>
-              <rect width="300" height="200" fill="none"/>
-              <path d="M50,170 C20,130 40,95 90,90 C150,84 150,40 110,25"
-                    fill="none" stroke="url(#cardSnake)" stroke-width="30" stroke-linecap="round"/>
-              <path d="M50,170 C20,130 40,95 90,90 C150,84 150,40 110,25"
-                    fill="none" stroke="#0a4a29" stroke-opacity=".4" stroke-width="2.5" stroke-dasharray="1 10" stroke-linecap="round"/>
-              <path d="M96,15 C104,4 124,2 134,12 C143,21 141,36 130,43 C121,49 108,47 101,40 Z" fill="url(#cardSnake)"/>
-              <circle cx="118" cy="18" r="3.4" fill="#0b1a13"/>
-            </svg>
+            <img src="assets/images/snake-card.jpg" alt="Close-up of a green pit viper, part of Zain's herpetology research" loading="lazy">
           </div>
           <div class="project-body">
             <h3>Herpetology &amp; Venom Toxinology</h3>
@@ -406,6 +366,6 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=4"></script>
+<script src="js/script.js?v=5"></script>
 </body>
 </html>
