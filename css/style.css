@@ -510,6 +510,13 @@ a.contact-card:hover { transform: translateY(-4px); border-color: var(--accent);
 }
 .to-top { color: var(--text-dim); transition: color .2s ease; }
 .to-top:hover { color: var(--accent); }
+.deploy-tag {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--accent);
+  opacity: .6;
+  margin: 0;
+}
 
 /* ===== Reveal animation ===== */
 .reveal {
