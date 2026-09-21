@@ -188,8 +188,9 @@ img { max-width: 100%; display: block; }
   position: relative;
   width: 100%;
   min-height: 640px;
-  display: flex;
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: end;
   overflow: hidden;
 }
 .hero-banner img {
@@ -209,6 +210,7 @@ img { max-width: 100%; display: block; }
 .hero-banner-inner {
   position: relative;
   z-index: 1;
+  width: 100%;
   padding: 60px 24px 56px;
   color: #f4faf6;
   display: flex;
