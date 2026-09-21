@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zain Arif — Herpetology, Biochemistry &amp; Toxinology</title>
+<meta name="description" content="Zain Arif — Transition Year student at Rath Dara Community College. Aspiring biochemist and herpetologist researching venom toxinology.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="nav-wrap" id="navWrap">
+  <nav class="nav container">
+    <a href="#home" class="logo">Zain<span class="dot">.</span>Arif</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active" data-link>Home</a></li>
+      <li><a href="#about" class="nav-link" data-link>About</a></li>
+      <li><a href="#skills" class="nav-link" data-link>Skills</a></li>
+      <li><a href="#interests" class="nav-link" data-link>Research</a></li>
+      <li><a href="#experience" class="nav-link" data-link>Experience</a></li>
+      <li><a href="#education" class="nav-link" data-link>Education</a></li>
+      <li><a href="#achievements" class="nav-link" data-link>Achievements</a></li>
+      <li><a href="#contact" class="nav-link" data-link>Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+        <svg id="themeIconSun" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="4.5"/><g stroke-width="1.8"><line x1="12" y1="1.5" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22.5" y2="12"/><line x1="4.4" y1="4.4" x2="6.5" y2="6.5"/><line x1="17.5" y1="17.5" x2="19.6" y2="19.6"/><line x1="4.4" y1="19.6" x2="6.5" y2="17.5"/><line x1="17.5" y1="6.5" x2="19.6" y2="4.4"/></g></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text reveal">
+        <p class="eyebrow">// Transition Year Student — Rath Dara Community College</p>
+        <h1>Hi, I'm <span class="accent">Zain Arif</span></h1>
+        <p class="hero-role">
+          <span id="typed">Aspiring Herpetologist</span><span class="cursor-blink">|</span>
+        </p>
+        <p class="hero-desc">
+          Transition Year student with an academic focus in biochemistry and herpetology.
+          Independently researching venom toxinology, learning Python, and preparing for a
+          pharmacy work placement — building toward a future in the biological sciences.
+        </p>
+        <div class="hero-cta">
+          <a href="assets/Zain_Arif_CV.pdf" class="btn btn-primary" download>Download CV</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+
+      <div class="hero-stats reveal" style="--delay:.15s">
+        <div class="stat-card">
+          <span class="stat-num" data-count="75">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Snake species studied</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-count="3">0</span><span class="stat-suffix">x</span>
+          <span class="stat-label">Student of the Year</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-count="0">0</span>
+          <span class="stat-label">Absences (2nd year)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-count="3">0</span>
+          <span class="stat-label">Years of attendance awards</span>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <p class="section-tag reveal">01 · About</p>
+      <h2 class="section-title reveal">Summary</h2>
+      <div class="about-grid">
+        <p class="about-text reveal">
+          I'm a Transition Year student at Rath Dara Community College with an academic focus
+          in biochemistry and herpetology. I've shown strong, measurable performance in science
+          throughout school, and I'm pursuing future work in the biological sciences — with a
+          particular interest in venom toxinology and how it can be applied to medicine.
+        </p>
+        <div class="about-card reveal" style="--delay:.1s">
+          <h3>Quick Facts</h3>
+          <ul class="fact-list">
+            <li><span>Focus</span><strong>Biochemistry &amp; Herpetology</strong></li>
+            <li><span>Currently</span><strong>Transition Year (TY)</strong></li>
+            <li><span>School</span><strong>Rath Dara Community College</strong></li>
+            <li><span>Coding</span><strong>Python, micro:bit</strong></li>
+            <li><span>Next up</span><strong>Pharmacy work placement</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section alt">
+    <div class="container">
+      <p class="section-tag reveal">02 · Skills</p>
+      <h2 class="section-title reveal">What I bring</h2>
+      <div class="skills-grid" id="skillsGrid">
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERESTS / PROJECTS -->
+  <section id="interests" class="section">
+    <div class="container">
+      <p class="section-tag reveal">03 · Research &amp; Interests</p>
+      <h2 class="section-title reveal">Areas of Interest &amp; Projects</h2>
+
+      <div class="tabs reveal">
+        <button class="tab-btn active" data-tab="herp">Herpetology &amp; Venom Toxinology</button>
+        <button class="tab-btn" data-tab="pharma">Pharmaceutical Science &amp; Biochemistry</button>
+      </div>
+
+      <div class="tab-panels">
+        <div class="tab-panel active" id="tab-herp">
+          <div class="panel-grid">
+            <div class="panel-text">
+              <h3>Herpetology &amp; Venom Toxinology</h3>
+              <p>
+                A deep personal interest in the biological study of venomous reptiles and the
+                molecular evolution of toxins. I'm interested in research into how venom can be
+                used in the development of modern, life-saving medicines.
+              </p>
+              <ul class="check-list">
+                <li>Independent research into snake species, venom composition &amp; toxin biology</li>
+                <li>Developed working knowledge of 75+ snake species, including classification and identifying characteristics</li>
+                <li>Researching how venom toxins can be applied to medicine</li>
+              </ul>
+            </div>
+            <div class="panel-visual">
+              <div class="dna-orbit" aria-hidden="true">
+                <div class="orbit-ring r1"></div>
+                <div class="orbit-ring r2"></div>
+                <div class="orbit-core">🐍</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-pharma">
+          <div class="panel-grid">
+            <div class="panel-text">
+              <h3>Pharmaceutical Science &amp; Biochemistry</h3>
+              <p>
+                A strong focus on chemical applications and pharmacology. Currently preparing to
+                complete a practical Transition Year work placement with a local pharmacy to gain
+                first-hand knowledge of clinical environments.
+              </p>
+              <ul class="check-list">
+                <li>Strong academic performance in science and chemistry-related subjects</li>
+                <li>Preparing for a hands-on pharmacy work placement</li>
+                <li>Interested in the crossover between toxinology and pharmacology</li>
+              </ul>
+            </div>
+            <div class="panel-visual">
+              <div class="dna-orbit" aria-hidden="true">
+                <div class="orbit-ring r1"></div>
+                <div class="orbit-ring r2"></div>
+                <div class="orbit-core">💊</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section alt">
+    <div class="container">
+      <p class="section-tag reveal">04 · Experience</p>
+      <h2 class="section-title reveal">Experience</h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2026</span>
+            <h3>Independent Reptile &amp; Venom Research</h3>
+            <p class="timeline-sub">Personal Research Project</p>
+            <ul class="check-list">
+              <li>Independent research into snake species, venom composition, and toxin biology</li>
+              <li>Developed knowledge of 75+ snake species, including classification and identifying characteristics</li>
+              <li>Researching how venom toxins can be used for medicine</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" style="--delay:.1s">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2026</span>
+            <h3>TY Computer Science Programme</h3>
+            <p class="timeline-sub">Rath Dara Community College</p>
+            <ul class="check-list">
+              <li>Selected to participate in a TY computer science programme</li>
+              <li>Currently developing skills in Python, micro:bit and basic programming</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section">
+    <div class="container">
+      <p class="section-tag reveal">05 · Education</p>
+      <h2 class="section-title reveal">Education</h2>
+      <div class="edu-card reveal">
+        <div class="edu-head">
+          <h3>Rath Dara Community College</h3>
+          <span class="edu-loc">Dublin</span>
+        </div>
+        <p class="edu-sub">Junior Cycle · 2023–2026 (awaiting results) — Currently in Transition Year (TY)</p>
+        <ul class="check-list">
+          <li>Track record of high academic performance, with distinctions in science, geography, French and mathematics on multiple occasions</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="section alt">
+    <div class="container">
+      <p class="section-tag reveal">06 · Achievements</p>
+      <h2 class="section-title reveal">Accomplishments &amp; Awards</h2>
+
+      <div class="award-grid">
+        <div class="award-card reveal">
+          <div class="award-icon">🏆</div>
+          <h3>Student of the Year</h3>
+          <p class="award-note">Consecutive Winner</p>
+          <p>Awarded the top academic and character prize out of the entire year group for three consecutive years (1st, 2nd and 3rd) at Rath Dara Community College.</p>
+        </div>
+        <div class="award-card reveal" style="--delay:.1s">
+          <div class="award-icon">📅</div>
+          <h3>Attendance Awards</h3>
+          <p class="award-note">1st, 2nd &amp; 3rd Year</p>
+          <p>Received attendance awards in 1st, 2nd and 3rd year, with zero absences recorded in 2nd year.</p>
+        </div>
+        <div class="award-card reveal" style="--delay:.2s">
+          <div class="award-icon">⛳</div>
+          <h3>Golf Scholarship</h3>
+          <p class="award-note">Fully Funded</p>
+          <p>Selected as a player to receive a fully funded club scholarship, including clubs, professional coaching and membership privileges until age 18.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <p class="section-tag reveal">07 · Contact</p>
+      <h2 class="section-title reveal">Let's talk</h2>
+      <p class="contact-lead reveal">
+        Interested in my research, my TY placement, or just want to say hi? I'd love to hear from you.
+      </p>
+
+      <div class="contact-grid reveal">
+        <a class="contact-card" href="mailto:zainarif09@gmail.com">
+          <span class="contact-icon">✉️</span>
+          <span class="contact-label">Email</span>
+          <span class="contact-value">zainarif09@gmail.com</span>
+        </a>
+        <div class="contact-card static">
+          <span class="contact-icon">🎓</span>
+          <span class="contact-label">School</span>
+          <span class="contact-value">Rath Dara Community College, Dublin</span>
+        </div>
+        <div class="contact-card static">
+          <span class="contact-icon">📋</span>
+          <span class="contact-label">References</span>
+          <span class="contact-value">Available on request</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; <span id="year"></span> Zain Arif. Built for a future in biochemistry &amp; herpetology.</p>
+    <a href="#home" class="to-top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
