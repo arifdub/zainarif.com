@@ -5,35 +5,59 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zain Arif — Herpetology, Biochemistry &amp; Toxinology</title>
 <meta name="description" content="Zain Arif — Transition Year student at Rath Dara Community College. Aspiring biochemist and herpetologist researching venom toxinology.">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Caveat:wght@600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body>
 
-<canvas id="bg-canvas"></canvas>
+<!-- Icon sprite -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 2v6.5L4 18a2 2 0 0 0 1.8 3h12.4a2 2 0 0 0 1.8-3l-5-9.5V2" stroke-linejoin="round"/><path d="M9 2h6"/><path d="M7.5 15h9"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M4 20c9-1 15-7 16-17-10 1-16 7-17 16z"/><path d="M5 19l6-6"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 4h10v4a5 5 0 0 1-10 0V4z"/><path d="M7 5H4a3 3 0 0 0 3 5"/><path d="M17 5h3a3 3 0 0 1-3 5"/><path d="M8 21h8"/><path d="M12 17v4"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="8 14 10.5 16.5 15 12"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none"/><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2z"/><polyline points="22 6 12 13 2 6"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+</svg>
 
 <div class="progress-bar" id="progressBar"></div>
 
 <header class="nav-wrap" id="navWrap">
   <nav class="nav container">
-    <a href="#home" class="logo">Zain<span class="dot">.</span>Arif</a>
+    <a href="#home" class="brand">
+      <img src="assets/logo-mark.png" alt="Zain Arif logo" class="brand-mark">
+      <span class="brand-name">Zain <span class="accent">Arif</span></span>
+    </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home" class="nav-link active" data-link>Home</a></li>
       <li><a href="#about" class="nav-link" data-link>About</a></li>
       <li><a href="#skills" class="nav-link" data-link>Skills</a></li>
-      <li><a href="#interests" class="nav-link" data-link>Research</a></li>
-      <li><a href="#experience" class="nav-link" data-link>Experience</a></li>
+      <li><a href="#research" class="nav-link" data-link>Research</a></li>
       <li><a href="#education" class="nav-link" data-link>Education</a></li>
       <li><a href="#achievements" class="nav-link" data-link>Achievements</a></li>
       <li><a href="#contact" class="nav-link" data-link>Contact</a></li>
     </ul>
     <div class="nav-actions">
       <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
-        <svg id="themeIconSun" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="4.5"/><g stroke-width="1.8"><line x1="12" y1="1.5" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22.5" y2="12"/><line x1="4.4" y1="4.4" x2="6.5" y2="6.5"/><line x1="17.5" y1="17.5" x2="19.6" y2="19.6"/><line x1="4.4" y1="19.6" x2="6.5" y2="17.5"/><line x1="17.5" y1="6.5" x2="19.6" y2="4.4"/></g></svg>
+        <svg id="themeIconSun" viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="4.5"/><g stroke-width="1.8"><line x1="12" y1="1.5" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22.5" y2="12"/><line x1="4.4" y1="4.4" x2="6.5" y2="6.5"/><line x1="17.5" y1="17.5" x2="19.6" y2="19.6"/><line x1="4.4" y1="19.6" x2="6.5" y2="17.5"/><line x1="17.5" y1="6.5" x2="19.6" y2="4.4"/></g></svg>
       </button>
+      <a href="#contact" class="btn btn-primary btn-sm nav-cta">Get in Touch</a>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -47,23 +71,53 @@
   <section id="home" class="hero">
     <div class="container hero-grid">
       <div class="hero-text reveal">
-        <p class="eyebrow">// Transition Year Student — Rath Dara Community College</p>
-        <h1>Hi, I'm <span class="accent">Zain Arif</span></h1>
-        <p class="hero-role">
-          <span id="typed">Aspiring Herpetologist</span><span class="cursor-blink">|</span>
-        </p>
+        <p class="eyebrow">Student · Researcher · Explorer</p>
+        <h1>Zain <span class="accent">Arif</span></h1>
         <p class="hero-desc">
-          Transition Year student with an academic focus in biochemistry and herpetology.
-          Independently researching venom toxinology, learning Python, and preparing for a
-          pharmacy work placement — building toward a future in the biological sciences.
+          Transition Year student exploring biochemistry, herpetology and technology —
+          researching venom toxinology and building toward a future in the biological sciences.
         </p>
+        <span class="hero-badge"><span class="dot"></span> Transition Year · Rath Dara Community College</span>
         <div class="hero-cta">
-          <a href="assets/Zain_Arif_CV.pdf" class="btn btn-primary" download>Download CV</a>
-          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+          <a href="#contact" class="btn btn-primary">Get in Touch</a>
+          <a href="assets/Zain_Arif_CV.pdf" class="btn-link" download>
+            <svg width="16" height="16"><use href="#i-download"/></svg> Download CV
+          </a>
         </div>
+        <p class="hero-quote">&ldquo;Small steps in science today, bigger discoveries tomorrow.&rdquo;</p>
       </div>
 
-      <div class="hero-stats reveal" style="--delay:.15s">
+      <div class="hero-visual reveal" style="--delay:.15s">
+        <div class="hero-scribble">Nature<br>Science<br>Curiosity</div>
+        <svg viewBox="0 0 420 420" role="img" aria-label="Illustration of a coiled snake">
+          <defs>
+            <linearGradient id="snakeGrad" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0%" stop-color="#0f6b3c"/>
+              <stop offset="55%" stop-color="#1fae5c"/>
+              <stop offset="100%" stop-color="#5be08a"/>
+            </linearGradient>
+            <radialGradient id="blobGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#16a34a" stop-opacity=".16"/>
+              <stop offset="100%" stop-color="#16a34a" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="210" cy="210" r="200" fill="url(#blobGrad)"/>
+          <path d="M15 20c8 22-2 30-10 40" transform="translate(60,330)" stroke="#16a34a" stroke-opacity=".35" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M0 0c10 18-6 24-2 40" transform="translate(330,60)" stroke="#16a34a" stroke-opacity=".35" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path id="snakeBody" d="M75,360 C40,300 55,255 100,235 C160,210 150,150 105,120 C70,97 78,55 120,40"
+                fill="none" stroke="url(#snakeGrad)" stroke-width="46" stroke-linecap="round"/>
+          <path d="M75,360 C40,300 55,255 100,235 C160,210 150,150 105,120 C70,97 78,55 120,40"
+                fill="none" stroke="#0a4a29" stroke-opacity=".45" stroke-width="4" stroke-dasharray="1 15" stroke-linecap="round"/>
+          <path d="M96,52 C104,34 132,26 150,38 C166,49 166,72 150,86 C138,96 120,94 108,84 Z" fill="url(#snakeGrad)"/>
+          <circle cx="132" cy="52" r="5.5" fill="#0b1a13"/>
+          <circle cx="134" cy="50" r="1.6" fill="#fff"/>
+          <path d="M150,40 L164,30 M150,40 L162,44" stroke="#7a1f2b" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="hero-stats reveal" style="--delay:.2s">
         <div class="stat-card">
           <span class="stat-num" data-count="75">0</span><span class="stat-suffix">+</span>
           <span class="stat-label">Snake species studied</span>
@@ -82,141 +136,129 @@
         </div>
       </div>
     </div>
-    <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="container">
-      <p class="section-tag reveal">01 · About</p>
-      <h2 class="section-title reveal">Summary</h2>
-      <div class="about-grid">
-        <p class="about-text reveal">
+  <section id="about" class="section alt">
+    <div class="container about-grid">
+      <div>
+        <p class="section-tag reveal">About Me</p>
+        <h2 class="section-title reveal">A curious student with a passion for discovery.</h2>
+        <p class="about-text reveal" style="--delay:.05s">
           I'm a Transition Year student at Rath Dara Community College with an academic focus
           in biochemistry and herpetology. I've shown strong, measurable performance in science
           throughout school, and I'm pursuing future work in the biological sciences — with a
           particular interest in venom toxinology and how it can be applied to medicine.
         </p>
-        <div class="about-card reveal" style="--delay:.1s">
-          <h3>Quick Facts</h3>
-          <ul class="fact-list">
-            <li><span>Focus</span><strong>Biochemistry &amp; Herpetology</strong></li>
-            <li><span>Currently</span><strong>Transition Year (TY)</strong></li>
-            <li><span>School</span><strong>Rath Dara Community College</strong></li>
-            <li><span>Coding</span><strong>Python, micro:bit</strong></li>
-            <li><span>Next up</span><strong>Pharmacy work placement</strong></li>
-          </ul>
+      </div>
+      <div class="icon-grid">
+        <div class="icon-card reveal">
+          <div class="icon-circle"><svg><use href="#i-flask"/></svg></div>
+          <h4>Science</h4>
+        </div>
+        <div class="icon-card reveal" style="--delay:.05s">
+          <div class="icon-circle"><svg><use href="#i-leaf"/></svg></div>
+          <h4>Nature</h4>
+        </div>
+        <div class="icon-card reveal" style="--delay:.1s">
+          <div class="icon-circle"><svg><use href="#i-monitor"/></svg></div>
+          <h4>Technology</h4>
+        </div>
+        <div class="icon-card reveal" style="--delay:.15s">
+          <div class="icon-circle"><svg><use href="#i-globe"/></svg></div>
+          <h4>Real-World Impact</h4>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="section alt">
+  <section id="skills" class="section">
     <div class="container">
-      <p class="section-tag reveal">02 · Skills</p>
+      <p class="section-tag reveal">Skills</p>
       <h2 class="section-title reveal">What I bring</h2>
-      <div class="skills-grid" id="skillsGrid">
-        <!-- populated by JS -->
-      </div>
+      <div class="skills-grid" id="skillsGrid"></div>
     </div>
   </section>
 
-  <!-- INTERESTS / PROJECTS -->
-  <section id="interests" class="section">
+  <!-- RESEARCH & PROJECTS -->
+  <section id="research" class="section alt">
     <div class="container">
-      <p class="section-tag reveal">03 · Research &amp; Interests</p>
-      <h2 class="section-title reveal">Areas of Interest &amp; Projects</h2>
+      <p class="section-tag reveal">Research &amp; Projects</p>
+      <h2 class="section-title reveal">Where curiosity meets science.</h2>
 
-      <div class="tabs reveal">
-        <button class="tab-btn active" data-tab="herp">Herpetology &amp; Venom Toxinology</button>
-        <button class="tab-btn" data-tab="pharma">Pharmaceutical Science &amp; Biochemistry</button>
-      </div>
-
-      <div class="tab-panels">
-        <div class="tab-panel active" id="tab-herp">
-          <div class="panel-grid">
-            <div class="panel-text">
-              <h3>Herpetology &amp; Venom Toxinology</h3>
-              <p>
-                A deep personal interest in the biological study of venomous reptiles and the
-                molecular evolution of toxins. I'm interested in research into how venom can be
-                used in the development of modern, life-saving medicines.
-              </p>
-              <ul class="check-list">
-                <li>Independent research into snake species, venom composition &amp; toxin biology</li>
-                <li>Developed working knowledge of 75+ snake species, including classification and identifying characteristics</li>
-                <li>Researching how venom toxins can be applied to medicine</li>
-              </ul>
-            </div>
-            <div class="panel-visual">
-              <div class="dna-orbit" aria-hidden="true">
-                <div class="orbit-ring r1"></div>
-                <div class="orbit-ring r2"></div>
-                <div class="orbit-core">🐍</div>
-              </div>
-            </div>
+      <div class="project-grid">
+        <div class="project-card reveal">
+          <div class="project-media">
+            <svg viewBox="0 0 300 200" role="img" aria-label="Snake illustration">
+              <defs>
+                <linearGradient id="cardSnake" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#5be08a"/>
+                  <stop offset="100%" stop-color="#0f6b3c"/>
+                </linearGradient>
+              </defs>
+              <rect width="300" height="200" fill="none"/>
+              <path d="M50,170 C20,130 40,95 90,90 C150,84 150,40 110,25"
+                    fill="none" stroke="url(#cardSnake)" stroke-width="30" stroke-linecap="round"/>
+              <path d="M50,170 C20,130 40,95 90,90 C150,84 150,40 110,25"
+                    fill="none" stroke="#0a4a29" stroke-opacity=".4" stroke-width="2.5" stroke-dasharray="1 10" stroke-linecap="round"/>
+              <path d="M96,15 C104,4 124,2 134,12 C143,21 141,36 130,43 C121,49 108,47 101,40 Z" fill="url(#cardSnake)"/>
+              <circle cx="118" cy="18" r="3.4" fill="#0b1a13"/>
+            </svg>
           </div>
-        </div>
-
-        <div class="tab-panel" id="tab-pharma">
-          <div class="panel-grid">
-            <div class="panel-text">
-              <h3>Pharmaceutical Science &amp; Biochemistry</h3>
-              <p>
-                A strong focus on chemical applications and pharmacology. Currently preparing to
-                complete a practical Transition Year work placement with a local pharmacy to gain
-                first-hand knowledge of clinical environments.
-              </p>
-              <ul class="check-list">
-                <li>Strong academic performance in science and chemistry-related subjects</li>
-                <li>Preparing for a hands-on pharmacy work placement</li>
-                <li>Interested in the crossover between toxinology and pharmacology</li>
-              </ul>
-            </div>
-            <div class="panel-visual">
-              <div class="dna-orbit" aria-hidden="true">
-                <div class="orbit-ring r1"></div>
-                <div class="orbit-ring r2"></div>
-                <div class="orbit-core">💊</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section alt">
-    <div class="container">
-      <p class="section-tag reveal">04 · Experience</p>
-      <h2 class="section-title reveal">Experience</h2>
-
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2026</span>
-            <h3>Independent Reptile &amp; Venom Research</h3>
-            <p class="timeline-sub">Personal Research Project</p>
+          <div class="project-body">
+            <h3>Herpetology &amp; Venom Toxinology</h3>
+            <p>Independent research into snake species, venom composition and toxin biology — with a focus on how venom can be applied to modern medicine.</p>
             <ul class="check-list">
-              <li>Independent research into snake species, venom composition, and toxin biology</li>
-              <li>Developed knowledge of 75+ snake species, including classification and identifying characteristics</li>
-              <li>Researching how venom toxins can be used for medicine</li>
+              <li>75+ snake species classified and studied</li>
+              <li>Researching venom-derived medical applications</li>
             </ul>
           </div>
         </div>
 
-        <div class="timeline-item reveal" style="--delay:.1s">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2026</span>
-            <h3>TY Computer Science Programme</h3>
-            <p class="timeline-sub">Rath Dara Community College</p>
+        <div class="project-card reveal" style="--delay:.1s">
+          <div class="project-media">
+            <div class="code-card">
+              <div class="ln"><span class="ln-num">1</span><span><span class="kw">def</span> <span class="fn">explore</span>():</span></div>
+              <div class="ln"><span class="ln-num">2</span><span>&nbsp;&nbsp;<span class="kw">print</span>(<span class="str">"Keep learning"</span>)</span></div>
+              <div class="ln"><span class="ln-num">3</span><span><span class="cm"># micro:bit + Python, TY 2026</span></span></div>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Python &amp; Computer Science</h3>
+            <p>Selected for the TY Computer Science Programme, building foundations in Python, micro:bit and basic programming.</p>
             <ul class="check-list">
-              <li>Selected to participate in a TY computer science programme</li>
-              <li>Currently developing skills in Python, micro:bit and basic programming</li>
+              <li>Hands-on Python &amp; micro:bit projects</li>
+              <li>Growing interest in problem-solving through code</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-card reveal" style="--delay:.2s">
+          <div class="project-media">
+            <svg viewBox="0 0 300 200" role="img" aria-label="Flask illustration">
+              <defs>
+                <linearGradient id="cardFlask" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#5be08a"/>
+                  <stop offset="100%" stop-color="#0f6b3c"/>
+                </linearGradient>
+              </defs>
+              <rect x="132" y="20" width="16" height="45" rx="3" fill="none" stroke="#0f6b3c" stroke-width="4"/>
+              <path d="M128,63 L98,150 Q95,175 118,175 L162,175 Q185,175 182,150 L152,63 Z" fill="none" stroke="#0f6b3c" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M104,140 Q95,175 118,175 L162,175 Q185,175 176,140 Z" fill="url(#cardFlask)"/>
+              <circle cx="130" cy="150" r="4" fill="#eafff1"/>
+              <circle cx="150" cy="160" r="3" fill="#eafff1"/>
+              <circle cx="140" cy="130" r="2.5" fill="#eafff1"/>
+              <path d="M60,60 q10,20 0,40 q-10,20 0,40" fill="none" stroke="#5be08a" stroke-width="4" stroke-linecap="round"/>
+              <path d="M60,60 q-10,20 0,40 q10,20 0,40" fill="none" stroke="#0f6b3c" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>Pharmaceutical Science &amp; Biochemistry</h3>
+            <p>A strong focus on chemical applications and pharmacology, preparing for a hands-on TY work placement with a local pharmacy.</p>
+            <ul class="check-list">
+              <li>Preparing for a clinical pharmacy placement</li>
+              <li>Exploring the crossover between toxinology and pharmacology</li>
             </ul>
           </div>
         </div>
@@ -227,17 +269,20 @@
   <!-- EDUCATION -->
   <section id="education" class="section">
     <div class="container">
-      <p class="section-tag reveal">05 · Education</p>
+      <p class="section-tag reveal">Education</p>
       <h2 class="section-title reveal">Education</h2>
       <div class="edu-card reveal">
-        <div class="edu-head">
-          <h3>Rath Dara Community College</h3>
-          <span class="edu-loc">Dublin</span>
+        <div class="edu-icon"><svg><use href="#i-cap"/></svg></div>
+        <div>
+          <div class="edu-head">
+            <h3>Rath Dara Community College</h3>
+            <span class="edu-loc">Dublin</span>
+          </div>
+          <p class="edu-sub">Junior Cycle · 2023–2026 (awaiting results) — Currently in Transition Year (TY)</p>
+          <ul class="check-list">
+            <li>Track record of high academic performance, with distinctions in science, geography, French and mathematics on multiple occasions</li>
+          </ul>
         </div>
-        <p class="edu-sub">Junior Cycle · 2023–2026 (awaiting results) — Currently in Transition Year (TY)</p>
-        <ul class="check-list">
-          <li>Track record of high academic performance, with distinctions in science, geography, French and mathematics on multiple occasions</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -245,24 +290,24 @@
   <!-- ACHIEVEMENTS -->
   <section id="achievements" class="section alt">
     <div class="container">
-      <p class="section-tag reveal">06 · Achievements</p>
+      <p class="section-tag reveal">Achievements</p>
       <h2 class="section-title reveal">Accomplishments &amp; Awards</h2>
 
       <div class="award-grid">
         <div class="award-card reveal">
-          <div class="award-icon">🏆</div>
+          <div class="award-icon"><svg><use href="#i-trophy"/></svg></div>
           <h3>Student of the Year</h3>
           <p class="award-note">Consecutive Winner</p>
           <p>Awarded the top academic and character prize out of the entire year group for three consecutive years (1st, 2nd and 3rd) at Rath Dara Community College.</p>
         </div>
         <div class="award-card reveal" style="--delay:.1s">
-          <div class="award-icon">📅</div>
+          <div class="award-icon"><svg><use href="#i-calendar"/></svg></div>
           <h3>Attendance Awards</h3>
           <p class="award-note">1st, 2nd &amp; 3rd Year</p>
           <p>Received attendance awards in 1st, 2nd and 3rd year, with zero absences recorded in 2nd year.</p>
         </div>
         <div class="award-card reveal" style="--delay:.2s">
-          <div class="award-icon">⛳</div>
+          <div class="award-icon"><svg><use href="#i-flag"/></svg></div>
           <h3>Golf Scholarship</h3>
           <p class="award-note">Fully Funded</p>
           <p>Selected as a player to receive a fully funded club scholarship, including clubs, professional coaching and membership privileges until age 18.</p>
@@ -271,32 +316,73 @@
     </div>
   </section>
 
+  <!-- GOAL BANNER -->
+  <section class="goal-section">
+    <div class="goal-bg">
+      <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMax slice">
+        <defs>
+          <linearGradient id="mGrad1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#123a2a"/>
+            <stop offset="100%" stop-color="#0a1a13"/>
+          </linearGradient>
+          <linearGradient id="mGrad2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1c5c3f"/>
+            <stop offset="100%" stop-color="#0d2318"/>
+          </linearGradient>
+          <radialGradient id="moonGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#9be8bd" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#9be8bd" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="1020" cy="80" r="70" fill="url(#moonGrad)"/>
+        <circle cx="1020" cy="80" r="26" fill="#dfffee" fill-opacity=".8"/>
+        <polygon points="0,400 0,220 220,80 420,240 620,60 820,260 1000,140 1200,260 1200,400" fill="url(#mGrad1)"/>
+        <polygon points="0,400 0,300 260,180 520,320 780,170 1020,300 1200,220 1200,400" fill="url(#mGrad2)" opacity=".85"/>
+      </svg>
+    </div>
+    <div class="container goal-content">
+      <p class="section-tag reveal">My Goal</p>
+      <h2 class="goal-title reveal">To learn. To explore. To make an impact.</h2>
+      <div class="goal-grid">
+        <div class="goal-item reveal">
+          <div class="goal-icon"><svg><use href="#i-book"/></svg></div>
+          <span>Learn</span>
+        </div>
+        <div class="goal-item reveal" style="--delay:.05s">
+          <div class="goal-icon"><svg><use href="#i-compass"/></svg></div>
+          <span>Explore</span>
+        </div>
+        <div class="goal-item reveal" style="--delay:.1s">
+          <div class="goal-icon"><svg><use href="#i-target"/></svg></div>
+          <span>Grow</span>
+        </div>
+        <div class="goal-item reveal" style="--delay:.15s">
+          <div class="goal-icon"><svg><use href="#i-leaf"/></svg></div>
+          <span>Contribute</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact" class="section contact-section">
     <div class="container">
-      <p class="section-tag reveal">07 · Contact</p>
+      <p class="section-tag reveal">Contact</p>
       <h2 class="section-title reveal">Let's talk</h2>
       <p class="contact-lead reveal">
         Interested in my research, my TY placement, or just want to say hi? I'd love to hear from you.
       </p>
 
-      <div class="contact-grid reveal">
-        <a class="contact-card" href="mailto:zainarif09@gmail.com">
-          <span class="contact-icon">✉️</span>
-          <span class="contact-label">Email</span>
-          <span class="contact-value">zainarif09@gmail.com</span>
+      <div class="contact-row reveal">
+        <div class="social-row">
+          <a class="social-btn" href="mailto:zainarif09@gmail.com" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+        </div>
+        <a href="mailto:zainarif09@gmail.com" class="btn btn-primary">
+          Send a Message <svg width="16" height="16"><use href="#i-send"/></svg>
         </a>
-        <div class="contact-card static">
-          <span class="contact-icon">🎓</span>
-          <span class="contact-label">School</span>
-          <span class="contact-value">Rath Dara Community College, Dublin</span>
-        </div>
-        <div class="contact-card static">
-          <span class="contact-icon">📋</span>
-          <span class="contact-label">References</span>
-          <span class="contact-value">Available on request</span>
-        </div>
       </div>
+      <p class="contact-email reveal">Or email me directly at <a href="mailto:zainarif09@gmail.com">zainarif09@gmail.com</a></p>
+      <p class="contact-email reveal">🎓 Rath Dara Community College, Dublin &middot; References available on request</p>
     </div>
   </section>
 
@@ -304,11 +390,22 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p>&copy; <span id="year"></span> Zain Arif. Built for a future in biochemistry &amp; herpetology.</p>
-    <a href="#home" class="to-top">Back to top ↑</a>
+    <div class="footer-brand">
+      <img src="assets/logo-mark.png" alt="Zain Arif logo">
+      <span>Zain Arif</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="year"></span> Zain Arif</p>
   </div>
 </footer>
 
-<script src="js/script.js?v=3"></script>
+<script src="js/script.js?v=4"></script>
 </body>
 </html>
