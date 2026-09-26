@@ -6,11 +6,21 @@ A single-page, interactive portfolio site built with plain HTML/CSS/JS
 ## Structure
 
 ```
-index.html          Page content
-css/style.css        Styling, dark/light theme, animations
-js/script.js          Interactivity (nav, tabs, counters, canvas background)
-assets/favicon.svg     Site icon
-assets/Zain_Arif_CV.pdf  Downloadable CV (linked from the "Download CV" button)
+index.html                  Page content, meta tags, JSON-LD structured data
+css/style.css                Styling, light/dark theme, animations
+js/script.js                  Interactivity (nav, reveal, counters, mobile menu)
+robots.txt                    Crawler rules + sitemap pointer
+sitemap.xml                   XML sitemap for search engines
+site.webmanifest              Web app manifest (name, icons, theme color)
+favicon.ico                   Root favicon fallback
+assets/favicon-*.png,
+  apple-touch-icon.png,
+  icon-192.png, icon-512.png  Favicons/app icons generated from the logo
+assets/logo-mark.png,
+  logo-full.png               The ZA logo (icon-only and full lockup)
+assets/images/og-cover.jpg    Social share preview image (Open Graph/Twitter)
+assets/images/*.jpg           Photos used in the hero and Research cards
+assets/Zain_Arif_CV.pdf       Downloadable CV (linked from "Download CV")
 ```
 
 ## Run it locally
@@ -53,14 +63,35 @@ so you just need to upload these files as-is.
 ## Customizing
 
 - **Content**: all text lives directly in `index.html`, organized by section
-  (`#about`, `#skills`, `#interests`, `#experience`, `#education`,
-  `#achievements`, `#contact`).
+  (`#about`, `#skills`, `#research`, `#education`, `#achievements`, `#contact`).
 - **Colors/theme**: edit the CSS variables at the top of `css/style.css`
-  under `:root` and `[data-theme="light"]`.
+  under `:root` and `:root[data-theme="dark"]`.
 - **Skills list**: edit the `skills` array near the top of `js/script.js`.
 - **CV file**: replace `assets/Zain_Arif_CV.pdf` with an updated CV, keeping
   the same filename (or update the `href` in the "Download CV" button in
   `index.html`).
+- **Cache busting**: static assets are versioned with a `?v=N` query string
+  (e.g. `css/style.css?v=9`). Bump the number after editing CSS/JS/icons so
+  visitors' browsers fetch the new version instead of a cached copy.
+
+## SEO
+
+- **`robots.txt`** allows all crawlers and points to `sitemap.xml`.
+- **`sitemap.xml`** lists the homepage. Update `<lastmod>` when you make a
+  meaningful content change.
+- **`site.webmanifest`** lets the site be "installed"/added to a phone's
+  home screen with the logo as its icon.
+- **Open Graph / Twitter Card tags** (in `index.html`'s `<head>`) control
+  how the link looks when shared on WhatsApp, iMessage, X, Facebook, etc.
+  They point at `assets/images/og-cover.jpg` — regenerate that image if you
+  change the name, tagline, or hero photo (it should stay 1200×630).
+- **JSON-LD structured data** (a `Person` schema in `<head>`) helps search
+  engines understand who the site is about.
+- **Google Search Console**: not set up here since it requires a Google
+  account. To verify ownership, either add the `<meta name="google-site-
+  verification" ...>` tag Search Console gives you into `index.html`'s
+  `<head>`, or upload the HTML file it provides to the site root, then
+  submit `https://zainarif.com/sitemap.xml` there.
 
 ## Privacy note
 
