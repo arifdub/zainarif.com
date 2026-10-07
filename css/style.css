@@ -199,7 +199,7 @@ img { max-width: 100%; display: block; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 64% 40%;
+  object-position: 66% 44%;
 }
 .hero-banner-overlay {
   position: absolute;
@@ -268,7 +268,7 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 760px) {
   .hero-banner { min-height: 560px; }
-  .hero-banner img { object-position: 65% 35%; }
+  .hero-banner img { object-position: 72% 40%; }
   .hero-banner-overlay {
     background: linear-gradient(180deg, rgba(6,14,10,.4) 0%, rgba(6,14,10,.6) 45%, rgba(5,12,9,.94) 100%);
   }
