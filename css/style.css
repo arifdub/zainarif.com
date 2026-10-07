@@ -527,6 +527,44 @@ img { max-width: 100%; display: block; }
 .edu-loc { color: var(--text-dim); font-size: .85rem; }
 .edu-sub { color: var(--text-dim); margin: 6px 0 14px; font-size: .93rem; }
 
+.grades-table-wrap {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.grades-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+.grades-table thead th {
+  background: var(--surface-2);
+  color: var(--text-dim);
+  text-align: left;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+}
+.grades-table thead th:last-child { text-align: right; }
+.grades-table tbody td {
+  padding: 11px 18px;
+  border-top: 1px solid var(--border);
+}
+.grades-table tbody td:last-child { text-align: right; }
+.grades-table tbody tr:first-child td { border-top: none; }
+.grade-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 600;
+}
+.grade-pill.distinction { background: var(--accent-soft); color: var(--accent-dark); }
+:root[data-theme="dark"] .grade-pill.distinction { color: var(--accent); }
+.grade-pill.merit { background: var(--surface-2); color: var(--text-dim); border: 1px solid var(--border); }
+
 /* Achievements */
 .award-grid {
   display: grid;
