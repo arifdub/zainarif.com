@@ -522,44 +522,58 @@ img { max-width: 100%; display: block; }
 }
 :root[data-theme="dark"] .edu-icon { color: var(--accent); }
 .edu-icon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+.edu-body { min-width: 0; flex: 1; }
 .edu-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
 .edu-head h3 { font-size: 1.15rem; }
 .edu-loc { color: var(--text-dim); font-size: .85rem; }
 .edu-sub { color: var(--text-dim); margin: 6px 0 14px; font-size: .93rem; }
 
 .grades-table-wrap {
+  width: 100%;
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
 }
-.grades-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: .9rem;
-}
-.grades-table thead th {
+.grades-head {
+  display: flex;
+  justify-content: space-between;
   background: var(--surface-2);
   color: var(--text-dim);
-  text-align: left;
   font-size: .75rem;
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
   padding: 10px 18px;
 }
-.grades-table thead th:last-child { text-align: right; }
-.grades-table tbody td {
-  padding: 11px 18px;
-  border-top: 1px solid var(--border);
+.grades-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.grades-table tbody td:last-child { text-align: right; }
-.grades-table tbody tr:first-child td { border-top: none; }
+.grades-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 13px 18px;
+  border-top: 1px solid var(--border);
+  font-size: .92rem;
+}
+.grades-list li:first-child { border-top: none; }
+.g-subject { min-width: 0; }
+.g-leader {
+  flex: 1;
+  min-width: 24px;
+  align-self: flex-end;
+  margin-bottom: 7px;
+  border-bottom: 2px dashed var(--border);
+}
 .grade-pill {
   display: inline-block;
   padding: 4px 12px;
   border-radius: 999px;
   font-size: .78rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 .grade-pill.distinction { background: var(--accent-soft); color: var(--accent-dark); }
 :root[data-theme="dark"] .grade-pill.distinction { color: var(--accent); }
@@ -731,7 +745,10 @@ img { max-width: 100%; display: block; }
   .section { padding: 36px 0; }
   .project-grid { grid-template-columns: 1fr; }
   .goal-grid { grid-template-columns: 1fr 1fr; }
-  .edu-card { flex-direction: column; }
+  .edu-card { flex-direction: column; padding: 20px; }
+  .grades-head, .grades-list li { padding: 10px 14px; }
+  .grades-list li { gap: 10px; font-size: .85rem; }
+  .grade-pill { font-size: .72rem; padding: 3px 10px; }
   .contact-row { flex-direction: column; align-items: flex-start; }
   .nav-cta { display: none; }
 }
